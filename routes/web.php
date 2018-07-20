@@ -12,6 +12,10 @@
 |
 */
 
+Route::get('prueba', function() {
+        return view('token');
+    });
+
 // Pages
 Route::view('/', 'landing')->middleware('guest')->name('landing');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');

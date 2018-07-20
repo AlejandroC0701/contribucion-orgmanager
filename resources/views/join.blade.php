@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Join {{ $org->pretty_name or $org->name }}</title>
+    <title>Join Manuel</title>
 
     <link href="{{ mix('css/new.css') }}" rel="stylesheet">
 
@@ -24,32 +24,22 @@
         <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white transition">
             <div class="px-6 py-4 text-center">
                 <div class="text-center">
-                    <img src="{{ $org->avatar }}" class="w-24 h-24 rounded-full mb-4">
+                    <img src="/img/orgmanagerIcon.png" class="w-24 h-24 rounded-full mb-4">
                 </div>
 
-                <h1 class="font-bold text-2xl mb-2 text-center text-grey-darkest">Join <a class="no-underline text-inherit link-shadow link-transition" href="https://github.com/{{ $org->name }}" target="_blank" rel="noopener noreferrer">{{ $org->pretty_name or $org->name }}</a></h1>
+                <h1 class="font-bold text-2xl mb-2 text-center text-grey-darkest">Join <a class="no-underline text-inherit link-shadow link-transition" href="https://github.com/" target="_blank" rel="noopener noreferrer"></a></h1>
 
-                @if (optional($org->team)->exists)
-                    @if ($org->team->privacy == 'closed')
-                        <h1 class="text-sm mb-4 text-center text-grey-darker font-medium">You will also join the <a href="https://github.com/orgs/{{ $org->name }}/teams/{{ str_slug($org->team->name) }}" target="_blank" rel="noopener noreferrer" class="no-underline text-inherit link-shadow link-transition">{{ $org->team->name }}</a> team</h1>
-                    @else
-                        <h1 class="text-sm mb-4 text-center text-grey-darker font-medium">You will also join the private {{ $org->team->name }} team</h1>
-                    @endif
-                @endif
+                        <h1 class="text-sm mb-4 text-center text-grey-darker font-medium">You will also join the <a href="https://github.com/orgs//teams/" target="_blank" rel="noopener noreferrer" class="no-underline text-inherit link-shadow link-transition">Manuel</a> team</h1>
 
-                @if ($org->description)
-                    <p class="text-grey-darker text-base">{{ $org->description or '' }}</p>
-                @endif
+                    <p class="text-grey-darker text-base">Organization Manuel</p>
             </div>
             <div class="border-b mb-4"></div>
-            <form id="join-form" method="POST" href="{{ route('join.post', $org) }}">
+            <form id="join-form" method="POST" href="">
                 {{ csrf_field() }}
-                @if ($org->hasPassword())
                     <div class="px-6 pb-4">
-                        <p class="text-grey-darker text-base mb-2">Enter the organization password to join {{ $org->pretty_name or $org->name }}:</p>
+                        <p class="text-grey-darker text-base mb-2">Enter the organization password to join Manuel:</p>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="org_password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
                     </div>
-                @endif
                 <div class="text-center mb-4">
                     <button type="submit" data-sitekey="{{ config('recaptcha.key') }}" class="bg-grey-darkest hover:bg-black-github text-white font-bold py-2 px-4 rounded g-recaptcha" data-callback="onSubmit">
                     <div class="flex items-center justify-center">

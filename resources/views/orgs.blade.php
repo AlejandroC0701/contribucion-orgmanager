@@ -1,8 +1,7 @@
 @extends('layouts.new')
 
-@if (count($orgs) > 5)
     @section('body-classes', 'overflow-y-scroll')
-@endif
+
 
 @section('content')
     <div>
@@ -27,18 +26,17 @@
         <div>
             <table class="flex items-center justify-center" style="border-spacing: 1rem">
                 <tbody>
-                    @foreach ($orgs as $org)
                     <tr class="bg-white rounded flex justify-around mb-4">
                         <td class="flex items-center text-center">
-                            <img src="{{ $org->avatar }}" alt="{{ $org->name }}" class="w-10 h-10">
+                            <img src="" alt="" class="w-10 h-10">
                         </td>
                         <td class="flex items-center text-center">
-                            <p class="text-base text-black-light w-64">{{ $org->pretty_name or $org->name }}</p>
+                            <p class="text-base text-black-light w-64">Manuel C.A.</p>
                         </td>
                         <td class="flex items-center justify-center">
                             <p class="text-base text-grey mr-3">Invite Link</p>
-                            <a class="text-base text-brand-darker mr-6" href="{{ route('join', $org) }}" target="_blank" rel="noopener noreferrer">{{ route('join', $org) }}</a>
-                            <a href="{{ route('org', $org) }}" class="no-underline bg-brand hover:bg-brand-dark text-white font-bold py-3 px-4 rounded-full focus:outline-none">
+                            <a class="text-base text-brand-darker mr-6" href="" target="_blank" rel="noopener noreferrer"></a>
+                            <a href="" class="no-underline bg-brand hover:bg-brand-dark text-white font-bold py-3 px-4 rounded-full focus:outline-none">
                                 <div class="inline-block">
                                     <div class="flex items-center justify-center">
                                         <svg class="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -50,7 +48,6 @@
                             </a>
                         </td>
                     </tr>
-                    @endforeach
                 </tbody>
             </table>
                 <!-- <div class="">
