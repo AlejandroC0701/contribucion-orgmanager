@@ -6,3 +6,5 @@
 ../developer-new
 ../token-new
 ../settings
+
+Estos son las url que se usaran para verificar las nuevas vistas de la aplicacion
